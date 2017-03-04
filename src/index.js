@@ -1,6 +1,6 @@
 'use strict';
-var Alexa = require("alexa-sdk");
-var speak - require("responses.js");
+var Alexa = require('alexa-sdk');
+var speak1 = require('responses');
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
@@ -10,11 +10,11 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit(speak.sayHello());
+        this.emit(':tell', speak1.sayHello())
     },
     
     'BobWorldIntent': function () {
-        this.emit(speak.sayHello())
+        this.emit(':tell', speak1.sayHello())
     },
     
     'FeelingIntent': function () {
